@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahithi's Web Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="app-title">Sahithi's Web Portal</h1>
+        <p class="app-subtitle">Realtime Location Tracing & Women Safety</p>
+    </header>
+
+    <main id="app" class="container">
+        <section id="lookup-section" class="card">
+            <h2>Enter Serial Number</h2>
+            <form id="serial-form" class="serial-form">
+                <label for="serial-input" class="sr-only">Serial Number</label>
+                <input id="serial-input" name="serial" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="Enter Here" required>
+                <button type="submit">Locate</button>
+            </form>
+            <p class="help">Enter the serial number sent to you via SMS to view the live location and registered details.</p>
+        </section>
+
+        <section id="details-section" class="details hidden">
+            <div class="profile card">
+                <img id="user-photo" alt="User photo">
+                <div class="info">
+                    <h2 id="user-name">—</h2>
+                    <p id="user-phone">—</p>
+                    <p id="user-status" class="status">—</p>
+                    <p id="user-serial" class="muted">Serial: —</p>
+                </div>
+            </div>
+
+            <div class="map card">
+                <div id="map" aria-label="Live location map"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>For emergencies, tap the sensor 3 times on your device. Stay safe.</small>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
