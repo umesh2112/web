@@ -182,7 +182,8 @@
 
         nameEl.textContent = record.name;
         phoneEl.textContent = record.phone;
-        statusEl.textContent = record.status;
+        statusEl.textContent = 'Danger - Help needed';
+        statusEl.classList.add('danger');
         serialEl.textContent = 'Serial: ' + sn;
         photoEl.src = record.photo;
 
