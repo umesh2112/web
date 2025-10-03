@@ -11,6 +11,8 @@
     const statusEl = $('#user-status');
     const serialEl = $('#user-serial');
     const photoEl = $('#user-photo');
+    const attachmentsCard = document.getElementById('attachments-card');
+    const audioDownload = document.getElementById('audio-download');
     // Ensure initial state: details hidden, lookup visible
     if (detailsSection) { detailsSection.classList.add('hidden'); }
     if (lookupSection) { lookupSection.classList.remove('hidden'); }
@@ -183,6 +185,14 @@
         statusEl.textContent = record.status;
         serialEl.textContent = 'Serial: ' + sn;
         photoEl.src = record.photo;
+
+        // Show attachments with audio link
+        if (attachmentsCard) attachmentsCard.classList.remove('hidden');
+        if (audioDownload) {
+            audioDownload.href = 'audio.txt';
+            audioDownload.download = `audio-${sn}.txt`;
+            audioDownload.textContent = `Download audio-${sn}.txt`;
+        }
 
         const map = L.map('map');
         const { lat, lng, label } = record.location;
